@@ -1,0 +1,56 @@
+%section{data: {"background" => "vendor/eth-reveal-theme/images/ETHbackground.png", "background-size" => "100%", "background-position" => "bottom"}}
+  %h2 High-energy sources towards 2D applications
+
+%section
+  %section
+    %h2 Goals and motivation of the project
+    %ul
+      %li feasibility of phase contrast on tubes with \(>100\) kVp
+      %li typical environment for medical, security and material science applications
+      %li characterize physical quantities
+
+  %section
+    %h2 Outline
+    %ul
+      %li special thanks to Gordan, Thomas and Tine
+      %li technical studies
+      %ul
+        %li evaluation of KIT gratings
+        %li pilatus detector
+      %li applications
+      %ul
+        %li biomedical: cartilage
+        %li biomedical: lungs
+        %li materials: powders
+        %li materials: cement hydration
+
+%section
+  %section
+    %h2 KIT gratings with Maria
+    %ul
+      %li various grating sets for 30 and 45 \(\pi\) shift
+      %li
+        short summary: gratings are ok, homogeneity and absorption
+        thickness are the main concerns.
+      %li \(\lt 100\) μm gold forces the smaller focal spot (1 mm)
+      %li visibility averaging 8-10% for most sets
+      %li best configuration reaching 15%
+
+  %section
+    %h2 Best configuration
+    %ul
+      %li 100 μm G0, 140 μm G2, \(\pi\) shift 45 keV
+      %li eiger 1M detector
+      %li 80 kVp, 1 mm focal spot
+    = image_tag "best_visibility.png", style: "width: 50vw"
+
+  %section
+    %h2 Conclusions for our fabrication team
+    %ul
+      %li 80 μm G0, 140 μm G2, \(\pi\) shift 45 keV
+      %li pilatus CdTe detector
+    = image_tag "visibility_energy.png", style: "width: 50vw"
+    %ul
+      %li increasing from 80 to 100 μm is very significant
+      %li this is also the very minimum absorption thickness for the setup
+

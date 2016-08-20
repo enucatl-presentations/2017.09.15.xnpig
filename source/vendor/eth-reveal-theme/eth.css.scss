@@ -1,0 +1,24 @@
+/*default mixins and settings*/
+
+@import "../reveal/css/theme/template/mixins";
+@import "../reveal/css/theme/template/settings";
+
+/*theme-specific fonts*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+$backgroundColor: white;
+$headingFont: "Lato";
+$headingColor: DarkBlue;
+$headingTextTransform: none;
+$mainColor: black;
+
+@import "../reveal/css/theme/template/theme";
+
+img {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.slide-number {
+    font-size: 0.5em !important;
+}

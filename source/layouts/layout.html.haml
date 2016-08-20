@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title= "Progress report"
+    %meta{:charset => "utf-8"}
+    %meta{name: "description", content: "7th progress report"}
+    %meta{name: "author", content: "Matteo Abis"}
+
+    %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+    %meta{name: "apple-mobile-web-app-status-bar-style", content: "black-translucent"}
+
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"}
+
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    = stylesheet_link_tag "all"
+    = stylesheet_link_tag "vendor/eth-reveal-theme/eth", id: "theme"
+    = javascript_include_tag "vendor/reveal/lib/js/head.min.js"
+    = javascript_include_tag "reveal_print_pdf"
+    /[if lt IE 9]
+      <script src="vendor/reveal.js/lib/js/html5shiv.js"></script>
+
+  %body{:class => page_classes}
+    .reveal
+      %img{src: "vendor/eth-reveal-theme/images/eth-logo.jpg", alt: "ETH Logo", width: "15%", align: "left"}
+      %img{src: "vendor/eth-reveal-theme/images/psi-logo.jpg", alt: "PSI Logo", width: "15%", align: "right"}
+      .slides
+        = yield
+    = javascript_include_tag "https://code.jquery.com/jquery-2.1.4.min.js"
+    = javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    = javascript_include_tag "all.js"
