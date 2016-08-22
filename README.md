@@ -19,3 +19,4 @@ push
 ```
 git subtree push --prefix=source/vendor/eth-reveal-theme eth-reveal-theme master
 ```
+
