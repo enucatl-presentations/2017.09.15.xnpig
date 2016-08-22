@@ -2,39 +2,36 @@
   %h2 High-energy sources towards 2D applications
 
 %section
-  %section
-    %h2 Goals and motivation of the project
-    %ul
-      %li feasibility of phase contrast on tubes with \(>100\) kVp
-      %li typical environment for medical, security and material science applications
-      %li characterize physical quantities
+  %h2 Goals and motivation
+  %ul
+    %li feasibility of phase contrast on tubes with \(>100\) kVp
+    %li typical environment for medical, security and material science applications
+    %li characterize physical quantities
 
-  %section
-    %h2 Outline
+%section
+  %h2 Outline
+  %ul
+    %li technical studies
     %ul
-      %li special thanks to Gordan, Thomas and Tine
-      %li technical studies
-      %ul
-        %li evaluation of KIT gratings
-        %li pilatus detector
-      %li applications
-      %ul
-        %li biomedical: cartilage
-        %li biomedical: lungs
-        %li materials: powders
-        %li materials: cement hydration
+      %li evaluation of KIT gratings
+      %li pilatus detector
+    %li applications
+    %ul
+      %li materials: powders
+      %li biomedical: cartilage
+      %li biomedical: lungs
 
 %section
   %section
-    %h2 KIT gratings with Maria
+    %h2 KIT gratings from Maria
     %ul
       %li various grating sets for 30 and 45 \(\pi\) shift
       %li
         short summary: gratings are ok, homogeneity and absorption
         thickness are the main concerns.
       %li \(\lt 100\) μm gold forces the smaller focal spot (1 mm)
-      %li visibility averaging 8-10% for most sets
-      %li best configuration reaching 15%
+      %li visibility 8-10% for most sets
+      %li.alert.alert-success best configuration averaging 15%
 
   %section
     %h2 Best configuration
@@ -50,7 +47,97 @@
       %li 80 μm G0, 140 μm G2, \(\pi\) shift 45 keV
       %li pilatus CdTe detector
     = image_tag "visibility_energy.png", style: "width: 50vw"
-    %ul
-      %li increasing from 80 to 100 μm is very significant
-      %li this is also the very minimum absorption thickness for the setup
 
+  %section
+    %h2 Conclusions for our fabrication team
+    %ul
+      %li increasing from 80 to 100 μm is significant
+      %li.alert.alert-warning this is the minimum thickness for the setup
+
+%section
+
+  %section
+    %h2 Powder analysis
+    %h3 Goals
+    %ul
+      %li material discrimination
+      %li measurement of structural properties
+    %h3 Tool
+    %p \( R = \frac{\log(\text{dark field})}{\log(\text{absorption})} \)
+
+  %section
+    %h2 Eggs containing different powders
+    = image_tag "series.160803.111406662926_series.160803.111112810409.png", style: "width: 50vw"
+
+  %section
+    %h2 Calibration
+    = tag :img, src: "https://github.com/Enucatl/pilatus_powders_microspheres/raw/master/plots/summary.png", style: "width: 70vw"
+
+  %section
+    %h2 Real life samples
+    = tag :img, src: "https://github.com/Enucatl/pilatus_powders_microspheres/raw/master/plots/powder_summary.png", style: "width: 70vw"
+
+  %section
+    %h2 Conclusions
+    %ul
+      %li.alert.alert-success good discrimination
+      %li.alert.alert-success independent of thickness
+      %li.alert.alert-success qualitative assessment of microscopic features
+      %li.alert.alert-success re-opens the way to Spyros' drug sample measurements
+      %li.alert.alert-danger quantitative measurement very difficult
+
+%section
+
+  %section
+    %h2 Cartilage delineation
+    %ul
+      %li Made famous by prof. Momose in Japan
+      %li Fresh (supermarket) chicken toe samples
+      %li Pilatus, 45 keV \(\pi\) shift
+
+  %section
+    = tag :img, src: "https://github.com/Enucatl/chicken_paws/raw/master/plots/series.160729.170729669658_series.160729.171501073073.png", style: "width: 50vw"
+
+  %section
+    = tag :img, src: "https://github.com/Enucatl/chicken_paws/raw/master/plots/series.160802.135434008170_series.160802.140709807259.png", style: "width: 50vw"
+
+%section
+
+  %section
+    %h2 Lung microstructure
+    %ul
+      %li Goran and Yannis working on rat lung samples
+      %li.alert.alert-danger negative results from heavy metal staining
+      %li.alert.alert-success interesting smoked/emphysema dried samples
+      %li Eiger 1M detector
+
+  %section
+    %p.alert.alert-warning Very preliminary!
+    = tag :img, src: "https://github.com/Enucatl/dried_lung_samples/raw/master/plots/ratio.png", style: "width: 45vw"
+
+  %section
+    %h2 Next step
+    %ul
+      %li Comprehensive study with beamline DPC and microtomography images by Goran
+
+%section
+
+  %section
+    %h2 Conclusions
+    %ul
+      %li general purpose grating interferometer at TOMCAT
+      %li high flux
+      %li high setup customizability
+      %li exposure times down from one day to one minute
+      %li.alert.alert-success dark-field imaging looks qualitatively promising
+      %li.alert.alert-danger still no good model for quantitative results
+
+  %section
+    %h2 Acknowledgements
+    %ul
+      %li Gordan and Thomas for the amazing technical support
+      %li Tine for installing and configuring all the new motors
+      %li Maria for aligning most of the gratings
+      %li Spyros for getting the Pilatus
+      %li Goran and Yannis for getting the lung samples from Bern
+      %li All of you for your attention and the upcoming discussion
