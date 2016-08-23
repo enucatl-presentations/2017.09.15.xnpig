@@ -62,6 +62,7 @@ def draw(input_file_name, height,
     limits = stats.mstats.mquantiles(
         absorption_image,
         prob=[0.02, 0.98])
+    limits = [0.9, 1]
     abs1.set_clim(*limits)
     print(limits)
     plt.savefig('{0}.{1}'.format(
