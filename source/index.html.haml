@@ -2,146 +2,161 @@
   %h2 High-energy sources towards 2D applications
 
 %section
-  %h2 Goals and motivation
+  %h2 goals and motivation
   %ul
     %li feasibility of phase contrast on tubes with \(>100\) kVp
     %li typical environment for medical, security and material science applications
-    %li characterize physical quantities
 
 %section
-  %h2 Outline
+  %h2 outline
   %ul
     %li technical studies
     %ul
       %li evaluation of KIT gratings
-      %li pilatus detector
     %li applications
     %ul
-      %li materials: powders
-      %li biomedical: cartilage
-      %li biomedical: lungs
+      %li.alert.alert-danger biomedical: lungs
+      %li.alert.alert-success material science: cement
 
 %section
   %section
-    %h2 KIT gratings from Maria
+    %h2 new batch of KIT gratings
+    %p delivered in January
+
+  %section
+    %h2 phase-shift gratings
+    %p thickness variation above 10%
+    .col-md-12
+      .col-md-6
+        = image_tag "10936.png", class: "img.img-responsive"
+      .col-md-6
+        = image_tag "12576.png", class: "img.img-responsive"
+    .col-md-12
+      %p.small
+        courtesy of P. Meyer from KIT,
+        %a{href: "https://www.bruker.com/fileadmin/user_upload/8-PDF-Docs/SurfaceAnalysis/3D-OpticalMicroscopy/Webinars/2012-12-11-3D-Oberflaechenmesstechnik-fuer-die-Produktion-Seminar.pdf"} see methods
+
+  %section
+    %h2 absorption gratings
+    %p tried to increase absorption thickness above 100-120 μm
+    %p
+      see
+      %a{href: "https://enucatl-presentations.github.io/angel-grating-report/"} my report
+    %p macroscopic defects in the gold structure
+
+  %section
+    %h2 final setup
     %ul
-      %li various grating sets for 30 and 45 \(\pi\) shift
+      %li G0 from the previous shipping
+      %li G1 most compatible with spec, according to KIT report
+      %li G2 most uniform according to our measurement
+    %p
+      \~10% visibility
+    %p 45 keV design, 100 kVp, 6 mA
+
+%section
+  %section
+    %h2 applications
+
+  %section
+    %h2 water diffusion in cement
+    %p similar to Fei Yang's "Dark-field X-ray imaging of unsaturated water transport in porous materials"
+
+  %section
+    %h2 the relevant signals
+    %ul
+      %li transmission \(A\)
+      %li dark field \(B\)
+      %li log ratio \(R = \log(A) / \log(B)\)
+
+  %section
+    %h2 theoretical introduction
+    %ul
       %li
-        short summary: gratings are ok, homogeneity and absorption
-        thickness are the main concerns.
-      %li \(\lt 100\) μm gold forces the smaller focal spot (1 mm)
-      %li visibility 8-10% for most sets
-      %li.alert.alert-success best configuration averaging 15%
+        Lynch et al.
+        \\[
+        \B \propto \mu_d = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
+        \\begin{cases}
+        D' & \text{if } D' \leqslant 1\\[2ex]
+        \\!\begin{align}
+        & D' - \sqrt{D'^2 - 1}\\
+        & (1 + D'^{-2}/2) \\
+        & + (D'^{-1} + D'^{-3} / 4) \\
+        & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
+        \\end{align} & \text{otherwise}
+        \\end{cases}
+        \\]
+      %li dark field as a function of sphere diameter and photon energy
 
   %section
-    %h2 Best configuration
-    %ul
-      %li 100 μm G0, 140 μm G2, \(\pi\) shift 45 keV
-      %li eiger 1M detector
-      %li 80 kVp, 1 mm focal spot
-    = image_tag "best_visibility.png", style: "width: 35vw"
+    %h2 sum over the spectrum
+    %p
+      \\[
+      R(\energy) = \frac{\log B}{\log A} = \frac{\mu_d}{2k\beta}
+      \\]
+    %p
+      \\[
+      R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
+      \\]
 
   %section
-    %h2 Conclusions for our fabrication team
+    %h2 expect large increase in contrast
+    %p
+      \\[
+      R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
+      \\]
     %ul
-      %li 80 μm G0, 140 μm G2, \(\pi\) shift 45 keV
-      %li pilatus CdTe detector
-    = image_tag "visibility_energy.png", style: "width: 35vw"
+      %li \(u\) depends on the diameter of the pores
+      %li \(\Delta n\) includes \(\delta\)
+  
+  %section
+    %h2 Experiment
+    %ul
+      %li dry cement cylinder at 120 °C for one hour
+      %li isolate sides with water-proof tape
+      %li put the base in contact with water
+      %li repeated radiographs with 20 phase steps x 0.2 s
 
   %section
-    %h2 Conclusions for our fabrication team
-    %ul
-      %li increasing from 80 to 100 μm is significant
-      %li.alert.alert-warning this is the minimum thickness for the setup
+    %h2 results: absorption
+    .col-md-12
+      <iframe width="500" height="400" src="https://www.youtube.com/embed/w8ND8DcHGnk?ecver=1" frameborder="0" allowfullscreen></iframe>
+
+  %section
+    %h2 results: ratio \(R\)
+    .col-md-12
+      <iframe width="500" height="400" src="https://www.youtube.com/embed/yEladJvuttE?ecver=1" frameborder="0" allowfullscreen></iframe>
+
+  %section
+    %h2 first shot
+    =tag :img, style: "width: 30vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/0.png"
+
+  %section
+    %h2 after one hour
+    =tag :img, style: "width: 30vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/200.png"
+
+  %section
+    %h2 contrast-to-noise ratio
+    = tag :img, style: "width: 20vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.absorption.png"
+
+
+  %section
+    %h2 contrast-to-noise ratio
+    = tag :img, style: "width: 20vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
+
+  %section
+    %h2 quantitative diffusion
+    %p thresholding \(\rightarrow\) fraction of wet pixels
+    = tag :img, style: "width: 20vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
 
 %section
-
   %section
-    %h2 Powder analysis
-    %h3 Goals
+    %h2 conclusions and outline
     %ul
-      %li material discrimination
-      %li measurement of structural properties
-    %h3 Tool
-    %p \( R = \frac{\log(\text{dark field})}{\log(\text{absorption})} \)
-
-  %section
-    %h2 Eggs containing different powders
-    = image_tag "series.160803.111406662926_series.160803.111112810409.png", style: "height: 60vh"
-
-  %section
-    %h2 Calibration
-    = tag :img, src: "https://github.com/Enucatl/pilatus_powders_microspheres/raw/master/plots/summary.png", style: "height: 60vh"
-
-  %section
-    %h2 Real life samples
-    = tag :img, src: "https://github.com/Enucatl/pilatus_powders_microspheres/raw/master/plots/powder_summary.png", style: "height: 60vh"
-
-  %section
-    %h2 Conclusions
-    %ul
-      %li.alert.alert-success good discrimination
-      %li.alert.alert-success independent of thickness
-      %li.alert.alert-success qualitative assessment of microscopic features
-      %li.alert.alert-success re-opens the way to Spyros' drug sample measurements
-      %li.alert.alert-danger quantitative measurement very difficult
-
-%section
-
-  %section
-    %h2 Cartilage delineation
-    %ul
-      %li Made famous by prof. Momose in Japan
-      %li Fresh (supermarket) chicken toe samples
-      %li Pilatus, 45 keV \(\pi\) shift
-
-  %section
-    = tag :img, src: "https://github.com/Enucatl/chicken_paws/raw/master/plots/series.160729.170729669658_series.160729.171501073073.png", style: "height: 70vh"
-
-  %section
-    = tag :img, src: "https://github.com/Enucatl/chicken_paws/raw/master/plots/series.160802.135434008170_series.160802.140709807259.png", style: "height: 70vh"
-
-%section
-
-  %section
-    %h2 Lung microstructure
-    %ul
-      %li Goran and Yannis working on rat lung samples
-      %li.alert.alert-danger negative results from heavy metal staining
-      %li.alert.alert-success interesting smoked/emphysema dried samples
-      %li Eiger 1M detector
-
-  %section
-    = image_tag "series.160816.153846346870_series.160816.154139428690.png", style: "height: 70 vh"
-
-  %section
-    %p.alert.alert-warning Very preliminary!
-    = tag :img, src: "https://github.com/Enucatl/dried_lung_samples/raw/master/plots/ratio.png", style: "height: 70vh"
-
-  %section
-    %h2 Next step
-    %ul
-      %li Comprehensive study with beamline DPC and microtomography images by Goran
-
-%section
-
-  %section
-    %h2 Conclusions
-    %ul
-      %li general purpose grating interferometer at TOMCAT
-      %li high flux
-      %li high setup customizability
-      %li exposure times down from one day to one minute
-      %li.alert.alert-success dark-field imaging looks qualitatively promising
-      %li.alert.alert-danger still no good model for quantitative results
-
-  %section
-    %h2 Acknowledgements
-    %ul
-      %li Gordan and Thomas for the amazing technical support
-      %li Tine for the support with the new motors
-      %li Andi for testing and configuring them
-      %li Maria for aligning most of the gratings
-      %li Spyros for getting the Pilatus
-      %li Goran and Yannis for getting the lung samples from Bern
-      %li All of you for your attention and the upcoming discussion
+      %li critical issues to be considered by in-house fabrication team
+      %li lung experiment would be repeated if we get any emphysematic samples
+      %li
+        expand the cement measurements
+        %ul
+          %li a complete theoretical treatment is possible by including a beamline micro-CT for the pore-size distribution
+          %li Fei's input particularly valuable now that she joins the team
