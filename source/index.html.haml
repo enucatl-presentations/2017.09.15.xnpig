@@ -1,162 +1,113 @@
 %section{data: {"background" => "vendor/eth-reveal-theme/images/ETHbackground.png", "background-size" => "100%", "background-position" => "bottom"}}
-  %h2 High-energy sources towards 2D applications
+  %h2 Table-top dark-field imaging for porous materials
 
 %section
-  %h2 goals and motivation
+  %h2 Goals of the experiments
   %ul
-    %li feasibility of phase contrast on tubes with \(>100\) kVp
+    %li grating interferometry with voltages above 100 kVp
     %li typical environment for medical, security and material science applications
 
 %section
-  %h2 outline
+  %h2 The setup
+  %p \[\pi\] shift at 45 keV
+  %p symmetric setup: 5.4 μm period
+  %p tube settings: 100 kVp 6 mA
+  %p
+    \~10% visibility
+
+%section
+  %h2 Water diffusion in cement
+  %p inspired by Fei Yang's "Dark-field X-ray imaging of unsaturated water transport in porous materials"
+
+%section
+  %h2 The relevant signals
   %ul
-    %li technical studies
-    %ul
-      %li evaluation of KIT gratings
-    %li applications
-    %ul
-      %li.alert.alert-danger biomedical: lungs
-      %li.alert.alert-success material science: cement
+    %li transmission \(A\)
+    %li dark field \(B\)
+    %li log ratio \(R = \log(A) / \log(B)\)
 
 %section
-  %section
-    %h2 new batch of KIT gratings
-    %p delivered in January
-
-  %section
-    %h2 phase-shift gratings
-    %p thickness variation above 10%
-    .col-md-12
-      .col-md-6
-        = image_tag "10936.png", class: "img.img-responsive"
-      .col-md-6
-        = image_tag "12576.png", class: "img.img-responsive"
-    .col-md-12
-      %p.small
-        courtesy of P. Meyer from KIT,
-        %a{href: "https://www.bruker.com/fileadmin/user_upload/8-PDF-Docs/SurfaceAnalysis/3D-OpticalMicroscopy/Webinars/2012-12-11-3D-Oberflaechenmesstechnik-fuer-die-Produktion-Seminar.pdf"} see methods
-
-  %section
-    %h2 absorption gratings
-    %p tried to increase absorption thickness above 100-120 μm
-    %p
-      see
-      %a{href: "https://enucatl-presentations.github.io/angel-grating-report/"} my report
-    %p macroscopic defects in the gold structure
-
-  %section
-    %h2 final setup
-    %ul
-      %li G0 from the previous shipping
-      %li G1 most compatible with spec, according to KIT report
-      %li G2 most uniform according to our measurement
-    %p
-      \~10% visibility
-    %p 45 keV design, 100 kVp, 6 mA
+  %h2 Theoretical framework
+  %ul
+    %li
+      Lynch et al.
+      \\[
+      \B \propto \mu_d = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
+      \\begin{cases}
+      D' & \text{if } D' \leqslant 1\\[2ex]
+      \\!\begin{align}
+      & D' - \sqrt{D'^2 - 1}\\
+      & (1 + D'^{-2}/2) \\
+      & + (D'^{-1} + D'^{-3} / 4) \\
+      & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
+      \\end{align} & \text{otherwise}
+      \\end{cases}
+      \\]
+    %li dark field as a function of sphere diameter and photon energy
 
 %section
-  %section
-    %h2 applications
-
-  %section
-    %h2 water diffusion in cement
-    %p inspired by Fei Yang's "Dark-field X-ray imaging of unsaturated water transport in porous materials"
-
-  %section
-    %h2 the relevant signals
-    %ul
-      %li transmission \(A\)
-      %li dark field \(B\)
-      %li log ratio \(R = \log(A) / \log(B)\)
-
-  %section
-    %h2 theoretical introduction
-    %ul
-      %li
-        Lynch et al.
-        \\[
-        \B \propto \mu_d = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
-        \\begin{cases}
-        D' & \text{if } D' \leqslant 1\\[2ex]
-        \\!\begin{align}
-        & D' - \sqrt{D'^2 - 1}\\
-        & (1 + D'^{-2}/2) \\
-        & + (D'^{-1} + D'^{-3} / 4) \\
-        & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
-        \\end{align} & \text{otherwise}
-        \\end{cases}
-        \\]
-      %li dark field as a function of sphere diameter and photon energy
-
-  %section
-    %h2 sum over the spectrum
-    %p
-      \\[
-      R(\energy) = \frac{\log B}{\log A} = \frac{\mu_d}{2k\beta}
-      \\]
-    %p
-      \\[
-      R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
-      \\]
-
-  %section
-    %h2 expect large increase in contrast
-    %p
-      \\[
-      R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
-      \\]
-    %ul
-      %li \(u\) depends on the diameter of the pores
-      %li \(\Delta n\) includes \(\delta\)
-  
-  %section
-    %h2 protocol
-    %ul
-      %li dry cement cylinder at 120 °C for one hour
-      %li isolate sides with water-proof tape
-      %li put the base in contact with water
-      %li repeated radiographs with 20 phase steps x 0.2 s for about two hours
-
-  %section
-    %h2 results: absorption
-    .col-md-12
-      <iframe width="500" height="400" src="https://www.youtube.com/embed/w8ND8DcHGnk?ecver=1" frameborder="0" allowfullscreen></iframe>
-
-  %section
-    %h2 results: ratio \(R\)
-    .col-md-12
-      <iframe width="500" height="400" src="https://www.youtube.com/embed/yEladJvuttE?ecver=1" frameborder="0" allowfullscreen></iframe>
-
-  %section
-    %h2 first shot
-    =tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/0.png"
-
-  %section
-    %h2 after one hour
-    =tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/200.png"
-
-  %section
-    %h2 contrast-to-noise ratio
-    = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.absorption.png"
-
-
-  %section
-    %h2 contrast-to-noise ratio
-    = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
-
-  %section
-    %h2 quantitative diffusion
-    %p thresholding \(\rightarrow\) fraction of wet pixels
-    = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
+  %h2 Sum over the spectrum
+  %p
+    \\[
+    R(\energy) = \frac{\log B}{\log A} = \frac{\mu_d}{2k\beta}
+    \\]
+  %p
+    \\[
+    R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
+    \\]
 
 %section
-  %section
-    %h2 conclusions and outline
-    %ul
-      %li critical issues to be considered by in-house fabrication team
-      %li lung experiment would be repeated if we get any emphysematic samples
-      %li
-        expand the cement measurements
-        %ul
-          %li a complete theoretical treatment is possible by including a beamline micro-CT for the pore-size distribution
-          %li Fei's input particularly valuable now that she joins the team
+  %h2 Better contrast expected
+  %p
+    \\[
+    R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
+    \\]
+  %ul
+    %li \(u\) depends on the diameter of the pores
+    %li \(\Delta n\) includes \(\delta\)
+
+%section
+  %h2 Methods
+  %ul
+    %li dry cement cylinder at 120 °C for one hour
+    %li water-proof sides
+    %li base in contact with water
+    %li repeated radiographs with 20 phase steps x 0.2 s for two hours
+
+%section
+  %h2 Time evolution
+  .col-md-12
+    %video
+      <source data-src="images/video.mp4" type="video/mp4" />
+
+%section
+  %h2 First shot
+  =tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/0.png"
+
+%section
+  %h2 After one hour
+  =tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/200.png"
+
+%section
+  %h2 Contrast-to-noise ratio
+  = tag :img, style: "width: 20vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.absorption.png"
+
+%section
+  %h2 Contrast-to-noise ratio
+  = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
+
+%section
+  %h2 Quantitative diffusion
+  %p thresholding \(\rightarrow\) fraction of wet pixels
+  = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
+
+%section
+  %h2 conclusions and outline
+  %ul
+    %li critical issues to be considered by in-house fabrication team
+    %li lung experiment would be repeated if we get any emphysematic samples
+    %li
+      expand the cement measurements
+      %ul
+        %li a complete theoretical treatment is possible by including a beamline micro-CT for the pore-size distribution
+        %li Fei's input particularly valuable now that she joins the team

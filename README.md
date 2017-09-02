@@ -20,3 +20,4 @@ push
 git subtree push --prefix=source/vendor/eth-reveal-theme eth-reveal-theme master
 ```
 
+video on youtube (unlisted, in case it doesnt work from the slide: https://youtu.be/ZhTkCU1hT08)
