@@ -1,6 +1,5 @@
-# 2017.04.04.progress.report
-[progress report tomcat](http://enucatl-presentations.github.io/2017.04.04.progress.report)
-1280x780 resolution
+# Conference presentation
+https://enucatl-presentations.github.io/2017.09.15.xnpig/
 
 git hook to push the compiled version to gh-pages
 -------------------------------------------------
