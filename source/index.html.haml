@@ -2,22 +2,15 @@
   %h2 Table-top dark-field imaging for porous materials
 
 %section
-  %h2 Goals of the experiments
-  %ul
-    %li grating interferometry with voltages above 100 kVp
-    %li typical environment for medical, security and material science applications
-
-%section
   %h2 The setup
-  %p \[\pi\] shift at 45 keV
-  %p symmetric setup: 5.4 μm period
-  %p tube settings: 100 kVp 6 mA
-  %p
-    \~10% visibility
-
-%section
-  %h2 Water diffusion in cement
-  %p inspired by Fei Yang's "Dark-field X-ray imaging of unsaturated water transport in porous materials"
+  %ul
+    %li \(\pi\) shift at 45 keV
+    %li symmetric setup: 5.4 μm period
+    %li tube settings: 100 kVp 6 mA
+    %li typical environment for medical, security and material science applications
+    %li detector: <span style="font-variant: small-caps;">dectris eiger 1m</span>
+    %li
+      \~10% visibility
 
 %section
   %h2 The relevant signals
@@ -55,6 +48,13 @@
     \\[
     R = C\frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
     \\]
+  %ul
+    %li \(w\) spectral weights
+    %li \(u\) conditional statement
+
+%section
+  %h2 Experimental validation with microspheres
+  = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
 
 %section
   %h2 Better contrast expected
@@ -66,6 +66,9 @@
     %li \(u\) depends on the diameter of the pores
     %li \(\Delta n\) includes \(\delta\)
 
+%section
+  %h2 Water diffusion in cement
+  
 %section
   %h2 Methods
   %ul
@@ -97,17 +100,40 @@
   = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
 
 %section
-  %h2 Quantitative diffusion
+  %h2 Measuring diffusion speed
   %p thresholding \(\rightarrow\) fraction of wet pixels
   = tag :img, style: "width: 33vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
 
 %section
-  %h2 conclusions and outline
+  %h2 Investigating lung microstructures
+  = image_tag "smoke_stitched.png", style: "width: 33vw"
+  %p courtesy of Dr. Goran Lovrić
+
+%section
+  %h2 Model
   %ul
-    %li critical issues to be considered by in-house fabrication team
-    %li lung experiment would be repeated if we get any emphysematic samples
-    %li
-      expand the cement measurements
-      %ul
-        %li a complete theoretical treatment is possible by including a beamline micro-CT for the pore-size distribution
-        %li Fei's input particularly valuable now that she joins the team
+    %li synchrotron microtomography
+    %li segmentation
+    %li sphere size distribution
+    %li calculate expected dark-field values on a polychromatic source
+
+%section
+  = image_tag "thicknessmap.png", style: "width: 33vw"
+  %p courtesy of Dr. Goran Lovrić
+
+%section
+  %h2 \(R\) values from grating interferometry
+  .col-md-6
+    = image_tag "KO373_LL_smoke.png", style: "width: 100%"
+  .col-md-6
+    %ul
+      %li ko373_LL: \(21.3 \pm 1.8\)
+      %li WT256_LL: \(16.5 \pm 1.6\) 
+      %li WT353_LL: \(17.7 \pm 1.4\)
+
+%section
+  %h2 Acknowledgements
+  %ul
+    %li <span style="font-variant: small-caps;">erc</span> grant <span style="font-variant: small-caps;">erc-2012-stg 310005-PhaseX</span>
+    %li <span style="font-variant: small-caps;">TOMCAT</span> beamline team
+    %li thank you for your attention
