@@ -1,47 +1,114 @@
 %section{data: {"background" => "vendor/eth-reveal-theme/images/ETHbackground.png", "background-size" => "100%", "background-position" => "bottom"}}
-  %h2 Measuring water diffusion in porous materials with high-energy grating interferometry and CdTe detectors
+  %h5 Measuring water diffusion in porous materials with high-energy grating interferometry and CdTe detectors
   %p M. Abis, M. Büchner, G. Lovrić, Z. Wang, M. Stampanoni
 
 %section
-  %h2 The setup
+  %h3 Goals
   %ul
-    %li \(\pi\) shift at 45 keV
-    %li symmetric setup: 5.4 μm period
-    %li gratings fabricated at KIT
-    %li tube settings: 100 kVp 6 mA
-    %li typical environment for medical, security and material science applications
-    %li detector: <span style="font-variant: small-caps;">dectris</span> Santis 0804 CdTe 75 μm detector prototype
-    %li
-      \~10% visibility
+    %li reconstruct evolution of a sample on the second scale on a table-top setup
+    %li demonstrate applications where detector efficiency is needed (medical, material science)
 
 %section
-  %h2 The relevant signals
+  %h3 Efficiency of a 750 μm thick sensor
+  = image_tag "efficiency.png", style: "width: 100%"
+
+%section
+  %h3 The setup
+  .col-md-6
+    %ul
+      %li tube runs at 100 kVp, 6 mA
+      %li \(\pi\) shift at 45 keV
+      %li 5.4 μm pitch
+      %li 52 cm total length
+      %li <span style="font-variant: small-caps;">dectris santis 0804</span> CdTe prototype
+      %li
+        \~10% visibility
+  .col-md-6
+    = image_tag "IMG_20170907_121347.jpg", style: "width: 100%"
+
+%section
+  %h3 The detector
+  %p <span style="font-variant: small-caps;">dectris santis 0804</span> CdTe
+  .col-md-12
+    %ul
+      %li 75 μm pixel size
+      %li 750 μm sensor thickness
+  .col-md-6
+    = image_tag "IMG_20170907_121325.jpg", style: "width: 100%"
+  .col-md-6
+    = image_tag "stability.png", style: "width: 100%"
+
+%section
+  %h3 Water uptake in a cement sample
+  %small see F. Yang et al., <i>Dark-field X-ray imaging of unsaturated water transport in porous materials</i>, 2014
+  .col-md-6
+    %ul
+      %li a cement cylinder is put in contact with water
+      %li the water slowly infiltrates the porous structure
+      %li water height \(\propto \sqrt{t}\)
+  .col-md-6
+    = image_tag "Figure5.gif", style: "width: 100%"
+    %p SEM scans of cement <br> (width 300 μm)
+
+%section
+  %h3 The relevant signals
   %ul
     %li transmission \(A\)
-    %li dark field \(B\)
+    %li visibility reduction \(B\)
     %li log ratio \(R = \log(A) / \log(B)\)
 
-%section
-  %h2 Theoretical framework
+  %p
+  %h3 Methods
   %ul
-    %li
-      Lynch et al.
-      \\[
-      \B \propto \mu_d = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
-      \\begin{cases}
-      D' & \text{if } D' \leqslant 1\\[2ex]
-      \\!\begin{align}
-      & D' - \sqrt{D'^2 - 1}\\
-      & (1 + D'^{-2}/2) \\
-      & + (D'^{-1} + D'^{-3} / 4) \\
-      & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
-      \\end{align} & \text{otherwise}
-      \\end{cases}
-      \\]
-    %li dark field as a function of sphere diameter and photon energy
+    %li dry cement cylinder at 120 °C for one hour
+    %li water-proof sides
+    %li base in contact with water
+    %li radiographs with 20 steps x 0.2 s for two hours
 
 %section
-  %h2 Sum over the spectrum
+  %h3 Time evolution
+  .col-md-12
+    %video
+      <source data-src="images/video.mp4" type="video/mp4" style="width: 40%;"/>
+
+%section
+  %h3 contrast-to-noise ratio
+  .col-md-6
+    = tag :img, src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.absorption.png"
+  .col-md-6
+    = tag :img, src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
+
+%section
+  %h3 Measuring diffusion speed
+  %p thresholding \(\rightarrow\) fraction of wet pixels
+  = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
+
+%section
+  %h3 Theoretical framework
+  %p dark field as a function of sphere diameter and photon energy
+  %small Lynch et al., <i>Interpretation of dark-field contrast and particle-size selectivity in grating interferometers</i>, 2011
+  .col-md-6
+    \\[
+    \B \propto \mu_d = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
+    \\begin{cases}
+    D' & \text{if } D' \leqslant 1\\[2ex]
+    \\!\begin{align}
+    & D' - \sqrt{D'^2 - 1}\\
+    & (1 + D'^{-2}/2) \\
+    & + (D'^{-1} + D'^{-3} / 4) \\
+    & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
+    \\end{align} & \text{otherwise}
+    \\end{cases}
+    \\]
+
+%section
+  %h3 Theoretical framework
+  %p dark field as a function of sphere diameter and photon energy
+  %small Lynch et al., <i>Interpretation of dark-field contrast and particle-size selectivity in grating interferometers</i>, 2011
+  = tag :img, style: "width: 50%", src: "https://www.researchgate.net/profile/Vinay_Pai/publication/51563274/figure/fig4/AS:305732164571139@1449903636286/Fig-4.png"
+
+%section
+  %h3 Sum over the spectrum
   %p
     \\[
     R(\energy) = \frac{\log B}{\log A} = \frac{\mu_d}{2k\beta}
@@ -55,95 +122,84 @@
     %li \(u\) conditional statement
 
 %section
-  %h2 Experimental validation with microspheres
+  %h3 Table-top grating interferometer with microspheres
   = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
 
 %section
-  %h2 Better contrast expected
-  %p
-    \\[
-    R \propto \frac{\sum_\energy w(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy w(\energy) \energy \beta}
-    \\]
+  %h3 Investigating lung microstructures
   %ul
-    %li \(u\) depends on the diameter of the pores
-    %li \(\Delta n\) includes \(\delta\)
-
-%section
-  %h2 Real time water diffusion
-  
-%section
-  %h2 Methods
-  %ul
-    %li dry cement cylinder at 120 °C for one hour
-    %li water-proof sides
-    %li base in contact with water
-    %li repeated radiographs with 20 phase steps x 0.2 s for two hours
-
-%section
-  %h2 Time evolution
-  .col-md-12
-    %video
-      <source data-src="images/video.mp4" type="video/mp4" style="width: 40vw;"/>
-
-%section
-  %h2 First shot
-  =tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/0.png"
-
-%section
-  %h2 After one hour
-  =tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/200.png"
-
-%section
-  %h2 Contrast-to-noise ratio
-  = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.absorption.png"
-
-%section
-  %h2 Contrast-to-noise ratio
-  = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/cnr.ratio.png"
-
-%section
-  %h2 Measuring diffusion speed
-  %p thresholding \(\rightarrow\) fraction of wet pixels
-  = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/wet-cement/raw/master/data/position.png"
-
-%section
-  %h2 Investigating lung microstructures
+    %li ground truth from synchrotron microtomography
+    %li quantitative data from the table-top setup on a macroscopic scale
   = image_tag "smoke_stitched.png", style: "width: 40vw"
-  %p courtesy of Dr. Goran Lovrić
+  %p G. Lovrić et al., <i>Dose optimization approach to fast X-ray microtomography of the lung alveoli</i>, 2013
 
 %section
-  %h2 Model
+  %h3 Three mouse lungs
+  .col-md-6
+    = image_tag "mouse_tomcat.png"
+    %ul
+      %li critical point dried lungs
+      %li tomographic scan at 21 keV
+      %li 1.1 μm effective pixel size
+  .col-md-6
+    = image_tag "ko373.png"
+  .col-md-12
+    %small G. Lovrić et al., <i>Dose optimization approach to fast X-ray microtomography of the lung alveoli</i>, 2013
+
+
+%section
+  %h3 Model
   %ul
     %li synchrotron microtomography
     %li segmentation
     %li sphere size distribution
     %li calculate expected dark-field values on a polychromatic source
-
-%section
-  %section
-    %h2 Lung structure size
-    = image_tag "thicknessmap.png", style: "width: 40vw"
-    %p courtesy of Dr. Goran Lovrić
-
-  %section
-    %h2 Microspheres
-    = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
-
-
-%section
-  %h2 \(R\) values from grating interferometry
   .col-md-6
-    = image_tag "KO373_LL_smoke.png", style: "width: 100%"
+    = image_tag "size_pdf.png"
   .col-md-6
-    %ul
-      %li ko373_LL: \(21.3 \pm 1.8\)
-      %li WT256_LL: \(16.5 \pm 1.6\) 
-      %li WT353_LL: \(17.7 \pm 1.4\)
+    = image_tag "full_summary.png"
 
 %section
-  %h2 Acknowledgements
+  %h3 \(R\) values from grating interferometry
+  .col-md-7
+    = image_tag "IMG_20170907_121347.jpg"
+  .col-md-5
+    = image_tag "KO373_LL_smoke.png"
+
+%section
+  %h3 Preliminary results
+  .col-md-12
+    %small
+      %table
+        %thead
+          %th sample
+          %th expected
+          %th measured
+        %tbody
+          %tr
+            %td \(1\)
+            %td \(22.2\)
+            %td \(21.3 \pm 1.8\)
+          %tr
+            %td \(2\)
+            %td \(13.7\)
+            %td \(16.5 \pm 1.6\)
+          %tr
+            %td \(3\)
+            %td \(14.4\)
+            %td \(17.7 \pm 1.4\)
+  .col-md-12
+    = image_tag "size_pdf.png", style: "width: 70%"
+
+%section
+  %h3 Acknowledgements
   %ul
     %li <span style="font-variant: small-caps;">erc</span> grant <span style="font-variant: small-caps;">erc-2012-stg 310005-PhaseX</span>
     %li <span style="font-variant: small-caps;">tomcat</span> beamline team
-    %li <span style="font-variant: small-caps;">dectris ag</span> for lending and setting up the detector
+    %li <span style="font-variant: small-caps;">kit</span> for the grating fabrication
+    %li <span style="font-variant: small-caps;">dectris ag</span> for lending and setting up the detector prototype
     %li thank you for your attention
+  .col-md-3
+    = tag :img, src: "http://www.barcelonagse.eu/sites/default/files/styles/bgse_image_content_image/public/news/erc-logo.jpg?itok=v6n1YGH3"
+  .col-md-9
+    = tag :img, src: "https://www.psi.ch/x-ray-tomography-group/ResearchEN/Staff2015_600px.jpg"
