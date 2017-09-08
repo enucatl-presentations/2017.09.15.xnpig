@@ -124,7 +124,8 @@
 
 %section
   %h3 Table-top grating interferometer with microspheres
-  = tag :img, style: "width: 40vw", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
+  .col-md-12
+    = tag :img, style: "width: 50%", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
 
 %section
   %h3 Investigating lung microstructures
@@ -144,17 +145,32 @@
       %li 1.1 μm effective pixel size
   .col-md-6
     = image_tag "ko373.png"
-  .col-md-12
-    %small G. Lovrić et al., <i>Dose optimization approach to fast X-ray microtomography of the lung alveoli</i>, 2013
-
 
 %section
   %h3 Model
   %ul
     %li synchrotron microtomography
     %li segmentation
-    %li sphere size distribution
-    %li calculate expected dark-field values on a polychromatic source
+  .col-md-12
+    = image_tag "segmentation_procedure.png"
+  .col-md-12
+    %small G. Lovrić et al., <i>Automated computer-assisted quantitative analysis of intact murine lungs at the alveolar scale</i>, in press 10.1371/journal.pone.0183979
+
+%section
+  %h3 Model
+  %ul
+    %li fit spheres in the lung microstructures
+    %li plot diameter distribution
+  .col-md-6
+    = image_tag "plos_thickness.png"
+  .col-md-6
+    = image_tag "size_pdf.png"
+  .col-md-12
+    %small G. Lovrić et al., <i>Automated computer-assisted quantitative analysis of intact murine lungs at the alveolar scale</i>, in press 10.1371/journal.pone.0183979
+
+%section
+  %h3 Model
+  %p sum over the sphere size distribution times the dark field response for each spere size
   .col-md-6
     = image_tag "size_pdf.png"
   .col-md-6
