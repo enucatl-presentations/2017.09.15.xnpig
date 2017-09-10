@@ -2,36 +2,27 @@
 
 library(ggplot2)
 library(data.table)
+library(scales)
 
-theme_set(theme_bw(base_size=12) + theme(
-    legend.key.size=unit(1, 'lines'),
-    text=element_text(face='plain', family='CM Roman'),
-    legend.title=element_text(face='plain'),
-    axis.line=element_line(color='black'),
-    axis.title.y=element_text(vjust=0.1),
-    axis.title.x=element_text(vjust=0.1),
-    panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(),
-    legend.key = element_blank(),
-    panel.border = element_blank()
-))
-
-
-dt = fread("stability.csv")
-dt[, timestamp := as.POSIXct(timestamp, format="%d-%m-%Y %H:%M:%S")]
+dt = fread("visibility.csv")
+setnames(dt, "V1", "time")
+setnames(dt, "V2", "visibility")
 print(dt)
-dt = head(dt, 100)
 
-plot = ggplot(dt) +
-    geom_point(aes(x=timestamp, y=counts)) +
-    scale_x_datetime() +
-    xlab("time")
+time_origin = dt[1, time]
+dt[, time := as.POSIXct(time - time_origin, origin="1970-01-01")]
 
+plot = ggplot(dt, aes(x=time, y=visibility)) +
+    geom_line() +
+    scale_x_datetime(labels=date_format("%H")) +
+    scale_y_continuous(limits=c(0.05, 0.1)) +
+    xlab("time (hours)") +
+    ylab("median visibility")
 
 X11()
 print(plot)
 width = 6
 factor = 0.75
 height = width * factor
-ggsave("stability.png", plot, width=width, height=height, dpi=300)
+ggsave("visibility_stable.png", plot, width=width, height=height, dpi=300)
 invisible(readLines(con="stdin", 1))
