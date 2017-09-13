@@ -1,12 +1,13 @@
-%section{data: {"background" => "vendor/eth-reveal-theme/images/ETHbackground.png", "background-size" => "100%", "background-position" => "bottom"}}
+%section{data: {"background" => "vendor/eth-reveal-theme/images/eth-sls-background.jpg", "background-size" => "100%", "background-position" => "bottom"}}
   %h5 Measuring water diffusion in porous materials with high-energy grating interferometry and CdTe detectors
   %p M. Abis, M. Büchner, G. Lovrić, Z. Wang, M. Stampanoni
+  %small Institute for Biomedical Engineering, University and ETH Zürich, 8092 Zürich, Switzerland </br> Swiss Light Source, Paul Scherrer Institut, 5232 Villigen, Switzerland 
 
 %section
   %h3 Goals
   %ul
     %li show a simple case for the implementation of a CdTe detector prototype
-    %li quantitatively describe the dark-field signal for a polychromatic source
+    %li latest data not in the abstract: quantitative description of the dark-field signal for a polychromatic source
 
 %section
   %h3 Efficiency of a 750 μm thick sensor
@@ -28,7 +29,7 @@
 
 %section
   %h3 The detector
-  %p Prototype based on <span style="font-variant: small-caps;">santis 0804</span> CdTe from <span style="font-variant: small-caps;">dectris</span> Ltd.
+  %p Prototype based on <span style="font-variant: small-caps;">santis 0804</span> CdTe from <span style="font-variant: small-caps;">dectris ltd.</span> 
   .col-md-12
     %ul
       %li 75 μm pixel size
@@ -97,7 +98,7 @@
 %section
   %h3 Monochromatic case
   %p dark field as a function of sphere diameter and photon energy
-  %small Lynch et al., <i>Interpretation of dark-field contrast and particle-size selectivity in grating interferometers</i>, 2011
+  %small S. Lynch et al., <i>Interpretation of dark-field contrast and particle-size selectivity in grating interferometers</i>, 2011
   = tag :img, style: "width: 50%", src: "https://www.researchgate.net/profile/Vinay_Pai/publication/51563274/figure/fig4/AS:305732164571139@1449903636286/Fig-4.png"
 
 %section
@@ -113,11 +114,13 @@
   %ul
     %li \(w\) spectral weights
     %li \(u\) conditional statement
+  %small M. Abis et al., <i>in preparation</i>
 
 %section
   %h3 Table-top grating interferometer with microspheres
   .col-md-12
     = tag :img, style: "width: 50%", src: "https://github.com/Enucatl/microspheres/raw/master/data/summary.png"
+  %small M. Abis et al., <i>in preparation</i>
 
 %section
   %h3 Investigating lung microstructures
@@ -165,16 +168,19 @@
   %h3 The final model
   %p sum over the sphere size distribution times the dark field response for each spere size
   .col-md-6
+    %p ground truth
     = image_tag "size_pdf.png"
   .col-md-6
+    %p dark-field response
     = image_tag "full_summary.png"
 
 %section
-  %h3 \(R\) values from grating interferometry
+  %h3 Grating interferometry
   .col-md-7
-    = image_tag "IMG_20170907_121347.jpg"
+    %p measure \(R\)
+    = image_tag "IMG_20170907_121347_arrow.jpg"
   .col-md-5
-    = image_tag "KO373_LL_smoke.png"
+    = image_tag "WT256_LL_smoke.png"
 
 %section
   %h3 Preliminary validation
@@ -198,23 +204,33 @@
             %td \(3\)
             %td \(14.4\)
             %td \(17.7 \pm 1.4\)
+  .col-md-7
+    = image_tag "size_pdf.png"
+  .col-md-5
+    %ul
+      %li sample 1 has smaller structures \(\rightarrow\) larger \(R\)
+      %li sample 2/3 similar
+      %li consistent values for the three samples
   .col-md-12
-    = image_tag "size_pdf.png", style: "width: 70%"
+    %small M. Abis et al., <i>in preparation</i>
 
 %section
-  %h3 Conclusions
+  %h3 Conclusions and outlook
   %ul
     %li successful implementation of the <span style="font-variant: small-caps;">dectris santis 0804</span> CdTe prototype with an application to a known study
     %li quantitative prediction of dark-field values on a polychromatic source supported by a ground truth from microtomography
+    %li more lung datasets are ready to be analyzed to increase statistics
+    %li an extension of the study is planned with access to mice who developed emphysema
+
 %section
   %h3 Acknowledgements
   %ul
     %li <span style="font-variant: small-caps;">erc</span> grant <span style="font-variant: small-caps;">erc-2012-stg 310005-PhaseX</span>
     %li <span style="font-variant: small-caps;">tomcat</span> beamline team
     %li <span style="font-variant: small-caps;">kit</span> for the grating fabrication
-    %li <span style="font-variant: small-caps;">dectris</span> Ltd. for lending and setting up the detector prototype
+    %li <span style="font-variant: small-caps;">dectris ltd.</span> for lending and setting up the detector prototype
     %li thank you for your attention
   .col-md-3
     = tag :img, src: "http://www.barcelonagse.eu/sites/default/files/styles/bgse_image_content_image/public/news/erc-logo.jpg?itok=v6n1YGH3"
   .col-md-9
-    = tag :img, src: "https://www.psi.ch/x-ray-tomography-group/ResearchEN/Staff2015_600px.jpg"
+    = image_tag "tomcatTeam.jpg"
